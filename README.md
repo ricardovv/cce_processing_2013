@@ -1,4 +1,3 @@
-#This is my first doc form github.
-##This is a message from my MacOld computer 2...
+#Taller PRocessing 2013-14.
+##Este es un repositorio para el taller de Processing que realice en el Entro Cultural de espana el ano 2013. Ire subiendo archivos revisados y otors nuevos para futuros talleres.
 
-* and the answer from mac 1...
