@@ -1,4 +1,7 @@
-float x = 250;
+float x1 = 200;
+float x2 = x1 + 100;
+float x3 = x2 + 200;
+
 int y = 250;
 int sz = 20;
 
