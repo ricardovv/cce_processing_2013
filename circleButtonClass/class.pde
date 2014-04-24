@@ -1,5 +1,5 @@
 
-
+//TO CLOSE AND OPEN TEXT BOXES IN TOPICS AND FOR INFO
 class ButCircle {
   String text;
   float tw; 
@@ -10,7 +10,6 @@ class ButCircle {
   color botColorPressed;
   color botCurrentColor;
   boolean botOver;
-
 
   //CONSTUCTOR
   ButCircle(int _x, int _y, int _size, String _t) {
@@ -26,15 +25,14 @@ class ButCircle {
     botOver = false;
   }//COONSTRUCTOR ENDS
 
-
   //METHODS
   //CHECK IF IS OVER OR NOT
   void display() {
-
     //update 
     if ( overCircle(circX, circY, circSize) ) {
       botOver = true;
-    } else {
+    } 
+    else {
       botOver = false;
     }//end update 
 
@@ -43,18 +41,22 @@ class ButCircle {
       if (mousePressed == true) {         
         botCurrentColor = botColorPressed;
         //select button
-        if (text == "close") { boxUp = false; }
-        if (text == "open") { boxUp = true; }
-      } else {
+        if (text == "close") { 
+          textBoxUp = false;
+        }
+        if (text == "open") { 
+          textBoxUp = true;
+        }
+      } 
+      else {
         botCurrentColor = botColorOver;
       }//mousePressed end
     }//if (botOver) END
-    //Set nor al color state
     else { 
       botCurrentColor = botColorNormal;
     }
 
-    //ELLIPSE GRAPHICS
+    //ELLIPSE BUTTON
     fill(botCurrentColor); 
     noStroke();
     ellipseMode(CENTER);
@@ -64,9 +66,7 @@ class ButCircle {
     textAlign(CENTER); 
     textSize(14);
     text(text, circX, circY+4);
-
   }//DISPLAY END
-
 
   //CHECK IF IS INSIDE
   boolean overCircle(int x, int y, int diameter) {  
@@ -74,25 +74,26 @@ class ButCircle {
     float disY = y - mouseY;
     if (sqrt(sq(disX) + sq(disY)) < diameter/2 ) {
       return true;
-    } else {
+    } 
+    else {
       return false;
     }
   }//overCircle
-
 }//CLASS CLOSE
 
 
-void textBox(float _posY) {
+void textBox(float _posX, float _posY) {
+  float  posX = _posX;
   //  float posY =_posY;
-  if (boxUp) {
-    posY = lerp(posY, 100, .1);
+  if (textBoxUp) {
+    textBoxPosY = lerp(textBoxPosY, 100, .1);
   }
   else {
-    posY = lerp(posY, 600, .1);
+    textBoxPosY = lerp(textBoxPosY, 600, .1);
   }
   pushMatrix();
-  translate(0, posY);
-  rect(50, 0, 500, 400);
+  translate(posX, textBoxPosY);
+  rect(0, 0, 400, 200);
   popMatrix();
 }//CLOSE textBox
 
