@@ -205,6 +205,7 @@ fill(20, 60, 140);
 //END TEST ROTATED
 
 
+
 //BOXES CHAPTERS TOP - - - - - - - - - - - - - - - - - - - - - - - 
   for (int i=0; i<chaptersNumber.length; i++) {
       fill(200, 100, 0);
@@ -217,17 +218,19 @@ fill(20, 60, 140);
       }else {
         fill(200, 240, 240);
       }
-
   }//CLOSE FOR CHAPTER
+
   //BOX VIS ARTICLE TOP ROLLOVER
   for (int i=0; i<chaptersNumber.length; i++) {
     int sep = 10;
     if (  (mouseX>visualPosX+boxW*i && mouseX<visualPosX+boxW*i+boxW-sep)  &&  (mouseY>visualPosY-boxH*3 && mouseY<visualPosY-boxH*1-5)  ) {
       //ROL OVER
       detailsOverVisualizationChapter( mouseX, mouseY, chaptersTitle[i], "Topic 1, Topic 2, Topic 3, Topic 4, Topic 5, Topic 6" );
-
     }
   }//close for
+//CLOSE BOXES CHAPTERS TOP - - - - - - - - - - - - - - - - - - - - - - - 
+
+
 
 
 
@@ -334,7 +337,7 @@ void detailsOverVisualizationChapter( float _newPosBoxX, float _newPosBoxY, Stri
 
 
   popMatrix();
-}//CLOSE detailsOverVisualizationTopic
+}//CLOSE detailsOverVisualizationChapter
 
 
 
