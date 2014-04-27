@@ -41,17 +41,16 @@ String[] articlesTitNumber = {
 };
 //CATEGORIZATION FOR EACH ARTICLE'S LENGHT
 int[] articlesCategoryNumber = {2,1,1,1,1,1,1,2,2,2,1,1,1,1,1,2,1,2,9,1,2,1,2,1,2,3,2,2,3,2,1,5,1,1,1,1,2,2,2,1,3,2,2,2,1,2,1,1,1,1,1,2,5,4,4,1,1,3,2,1,3,2,1,4,3,3,2,2,1,1,2,2,1,2,1,1,2,3,4,1,2,1,1,3,2,2,2,2,1,1,1,1,3,8,2,3,2,1,2,3,1,2,1,1,2,1,2,2,1,2,1,2,1,3,1,3,1,1,3,2,1,1,1,1,2,1,2,1,2,2,2,1,2,1,1,1,1,1,2,1,1,1,1,2,3,2,1,1,1,1,1,1,1,1,2,1,1};
-
 int numberOfArticles = articlesIdNumber.length;
-int  boxW = 40;
-int  boxH = 12;
-int sep = 2;
-
 int[] articlesPosX = new int[articlesIdNumber.length];
 int[] articlesPosY = new int[articlesIdNumber.length];
 int[] articlesH   = new int[articlesIdNumber.length];
-int factorH;
 
+// VARIABLES FOR TOPIC STRUCTURE
+int  boxW = 40;
+int  boxH = 12;
+int sep = 2;
+int factorH;
 int gridUnit = 20;
 int visualX = 220;
 int visualY = 170;
@@ -63,6 +62,10 @@ int visualPosY;
 int visualAreaW;//Width elements
 int visualAreaH;//Height Elements
  
+
+
+
+
 
 void setup() {
   size(1000, 700);
@@ -247,14 +250,15 @@ fill(20, 60, 140);
   }//close for draw boxes
 
 
-  //BOX VIS ARTICLE ROLLOVER
+  //DETAILS ARTICLES ON ROLLOVER
   for (int i=0; i<numberOfArticles; i++) {
     int sep = 10;
     if (  (mouseX>visualPosX+articlesPosX[i] && mouseX<visualPosX+articlesPosX[i]+boxW-sep)  &&  (mouseY>visualPosY+articlesPosY[i] && mouseY<visualPosY+articlesPosY[i]+boxH)  ) {
       //ROL OVER
-      detailsOverVisualizationTopic( mouseX, mouseY, articlesTitNumber[i], articlesIdNumber[1], "Topic 1, Topic 2, Topic 3, Topic 4, Topic 5, Topic 6" );
+      detailsOverVisualizationTopic( mouseX, mouseY, articlesTitNumber[i], articlesIdNumber[1], "XXXXARTICLES Topic 1, Topic 2, Topic 3, Topic 4, Topic 5, Topic 6" );
     }
-  }//close for
+  }  //DETAILS ARTICLES ON ROLLOVER
+  
 
 }//CLOSE DRAW
 
@@ -303,6 +307,12 @@ void detailsOverVisualizationTopic( float _newPosBoxX, float _newPosBoxY, String
 
   popMatrix();
 }//CLOSE detailsOverVisualizationTopic
+
+
+
+
+
+
 
 
 
