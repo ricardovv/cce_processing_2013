@@ -1,5 +1,6 @@
 // Fixed: Roll overs articles,  
-//PRESENT IN MAIN APP
+
+//PRESENT IN MAIN APP??
 float gridUnit = 20;
 float visualX = 0;
 float visualY = 0;//160
@@ -11,7 +12,7 @@ float visualPosY = 160;
 float visualAreaW;//Width elements
 float visualAreaH;//Height Elements
 
-//TOPICS ELEMENTS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// TOPICS ELEMENTS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 //TOPICS - CHAPTERS & ARTICLES DATA
 String[] chaptersNumber = {"I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","TD"}; 
 String[] chaptersTitle = {"Bases of Institutionally","Nationality and Citizenship","Constitutional Rights and Duties","Government","National Congress","Judicial Power","Public Ministry","Constitutional Tribunal","Electoral Justice","Office of the Comptroller General of the Republic","Armed Forces, Forces of Order and Public Security","Council of National Security","Central Bank","Government & Interior Administration of the State","Reform of the Constitution","Transitory Provisions"}; 
@@ -43,6 +44,8 @@ float boxChapterH = gridUnit;
 float boxChapterW = articleBoxW;
 float boxChapterX;
 float boxChapterY;
+// CLOSE TOPICS ELEMENTS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 
 
 
@@ -77,9 +80,11 @@ void draw(){// - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-
-void  checkCategory() {
+  
+  
+  
 //1- CHECK CATEGORY HEIGHT OR WIDTHS - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+void  checkCategory() {
 //  posY[0] = 0;//starting at...
   for(int i=0; i<articlesCategory.length; i++){
     fill(200);
@@ -104,7 +109,6 @@ void  checkCategory() {
     if(articlesCategory[i]==19){ bH[i] = articleBoxHintial*9.5; }
   }
 }//CLOSE 1- CHECK CATEGORY HEIGHT OR WIDTHS - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
 
 
 //2- DISPLAY CHAPTERS TOP - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -162,9 +166,6 @@ void chapterDetailsOverVisualization( float _newPosBoxX, float _newPosBoxY, Stri
 }//3- CLOSE OVER VISUALIZATIONS CHAPTER TOP - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 
-
-
-
 //4- DISPLAY ARTICLES  - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 void articlesDisplayBoxes(){
   //  posY[0] = 0;//starting at...
@@ -191,7 +192,6 @@ void articlesDisplayBoxes(){
 //    articlesPosY[i] = int(newPosY) ;
     articlesPosX[i] = int(visualPosX + articleBoxW*countToRight);
     articlesPosY[i] = int(visualPosY + posY[i] + sep);
-        
     //DRAW BOXES
     //    rect( newPosX ,articlesPosY[i] ,articleBoxW-sep*5, bH[i]-sep );
     rect( articlesPosX[i] ,articlesPosY[i] ,articleBoxW-sep*5, bH[i]-sep );
@@ -208,7 +208,6 @@ void articlesDisplayBoxes(){
    } //CLOSE SHOW DETAILS ON ROLLOVERS
 
 }//4- CLOSE DISPLAY CHAPTER BOXES - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
 
 
 //5- DETAILS OVER ARTICLES BELLOW - on articlesDisplayBoxes()- - - - - - - - - - - - - - - 
@@ -252,11 +251,6 @@ void articleDetailsOverVisualization( float _newPosBoxX, float _newPosBoxY, Stri
 }//5- CLOSE DETAILS OVER ARTICLES BELLOW - on articlesDisplayBoxes() - - - - - - - - - - - - - - -  
 
 
-
-
-
-
-
 //6- LABELS VISUALIZATIONS - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 void visualizationLabels(float _x, float _y){
   float posX = _x;
@@ -275,7 +269,7 @@ void visualizationLabels(float _x, float _y){
 //  fill(200);
 //  rect(posX-10, posY+11, 1, 520);
 } 
-//5- END LABELS VISUALIZATIONS - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+//6- END LABELS VISUALIZATIONS - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 
 
